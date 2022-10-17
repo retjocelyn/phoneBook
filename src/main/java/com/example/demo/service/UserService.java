@@ -61,4 +61,10 @@ public class UserService {
     public User findByName(String email) {
        return userRepository.findUserByEmail(email);
     }
+
+    public void deleteUser() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User userToDelete  = this.userRepository.findUserByEmail(auth.getName());
+        userRepository.delete(userToDelete);
+    }
 }

@@ -38,11 +38,7 @@
               <p th:text="${user.familyName}"></p>
               <p th:text="${user.email}"></p>
             <a class="btn btn-primary" th:href="@{/users/edit/{id}(id=${user.id})}">edit</a>
-              <!--  <form action="#"
-                    th:object="${user}"  th:action="@{/users/delete/{id}(id=${user.id})}" method="post">
-                <input type="hidden" th:field="*{id}"  th:value="${user.id}" name="id"/>
-                <button type="submit" type="button" >Delete</button>
-              </form>-->
+              <a class="btn btn-primary" th:href="@{/users/delete}">delete</a>
             </div>
           </div>
         </div>
