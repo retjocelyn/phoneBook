@@ -10,16 +10,22 @@
   <title>home</title>
 </head>
 <body>
-
 <div class="container-fluid row d-flex flex-column justify-content-center">
   <div th:insert="../fragments/header :: header">
   </div>
   <main class="d-flex flex-column align-items-center">
-    <h1>Form</h1>
-    <form class=" col-3 d-flex flex-column align-items-center border border-secondary rounded" action="#" th:action="@{/users/register}" th:object="${user}" method="post"
+    <h1>Inscription</h1>
+    <form class=" col-3 d-flex flex-column align-items-center border border-secondary rounded"
+          action="#" th:action="@{/users/register}" th:object="${user}" method="post"
           enctype="multipart/form-data">
       <div>
-        <input type="text" th:field="*{email}"  id="email" name="email" placeholder="Entrez un email" />
+        <input type="text" th:field="*{firstName}"  id="firstName" name="firstName" placeholder="Entrez un Nom" />
+      </div>
+      <div>
+        <input type="text" th:field="*{familyName}"   id="familyName" name="familyName"  placeholder="Entrez un prenom" />
+      </div>
+      <div>
+        <input type="text" th:field="*{email}"  id="email" name="email"  placeholder="Entrez un email" />
       </div>
       <div>
         <input type="password" th:field="*{password}" id="password" name="password" placeholder="Entrez un mot de passe"/>
