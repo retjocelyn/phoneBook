@@ -17,6 +17,8 @@ public class CreateUserDto {
 
     private  String picture;
 
+    private  String phoneNumber;
+
     @NotEmpty
     @Email(message = "Email should be valid")
     private String email;
@@ -83,5 +85,13 @@ public class CreateUserDto {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

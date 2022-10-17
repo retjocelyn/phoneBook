@@ -17,7 +17,7 @@ public class CustomLogoutHandler implements LogoutHandler {
         SecurityContextHolder.clearContext();
 
         try {
-            response.sendRedirect("/users/signin");
+            response.sendRedirect("/users/hello");
 
         } catch (IOException e) {
             e.printStackTrace();

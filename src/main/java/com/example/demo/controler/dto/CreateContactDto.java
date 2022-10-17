@@ -5,8 +5,9 @@ import com.example.demo.repository.entity.User;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-public class createContactDto {
+public class CreateContactDto {
 
+    private long id;
     private String familyName;
 
     private String firstName;
@@ -15,7 +16,9 @@ public class createContactDto {
 
     private String phoneNumber;
 
-    public createContactDto() {
+    private User user;
+
+    public CreateContactDto() {
     }
 
     public String getFamilyName() {
@@ -50,5 +53,19 @@ public class createContactDto {
         this.phoneNumber = phoneNumber;
     }
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

@@ -7,7 +7,7 @@
 <div th:fragment="header">
   <header>
 
-    <nav id="headerBarre" class="navbar navbar-expand-lg bg-warning col-12">
+    <nav id="headerBarre" class="navbar navbar-expand-lg bg-black col-12">
         <a class="navbar-brand text-white" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -15,16 +15,19 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">tableau de bord</a>
+              <a class="nav-link text-white"  th:href="@{/contact/allContacts}">Contacts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Prospects</a>
+              <a class="nav-link text-white"  th:href="@{/contact/addContact}">ajouter contacts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Clients</a>
+              <a class="nav-link text-white"  th:href="@{/logout}">logout</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Calendrier</a>
+              <a class="nav-link text-white" href="http://localhost:8080/users/signin">login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="http://localhost:8080/users/register">s'inscrire</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

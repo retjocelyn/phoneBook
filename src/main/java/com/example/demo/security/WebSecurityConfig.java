@@ -51,7 +51,7 @@ public class WebSecurityConfig {
                 // Configuration du logout
                 .and()
                 .logout()
-                .logoutUrl("/users/logout")
+                .logoutUrl("/logout")
                 .addLogoutHandler(logoutHandler)
                 .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK))
                 .permitAll();
