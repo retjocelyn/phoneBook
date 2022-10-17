@@ -28,10 +28,7 @@ public class UserController {
         model.addAttribute("user", new User());
         return "signin";
     }
-    @GetMapping("/hello")
-    public String displayHome() {
-        return "hello";
-    }
+
 
     @GetMapping("/register")
     public String displayRegisterForm(Model model) {
@@ -63,7 +60,7 @@ public class UserController {
     @PostMapping("/edit/{id}")
     public String EditUser(CreateUserDto createUserDto) {
        userService.editUser(createUserDto);
-        return "redirect:/users/hello";
+        return "redirect:/users/showProfile";
     }
 
     @GetMapping("/showProfile")
@@ -76,6 +73,6 @@ public class UserController {
     @GetMapping("/delete")
     public String deleteUser() {
         userService.deleteUser();
-        return "redirect:/users/hello";
+        return "redirect:/users/signin";
     }
 }

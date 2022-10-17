@@ -42,7 +42,7 @@ public class ContactController {
     @PostMapping("/addContact")
     public String addContact( CreateContactDto createContactDto){
        contactService.addContact(createContactDto);
-        return "redirect:/users/hello";
+        return "redirect:/contact/allContacts";
     }
 
 

@@ -45,7 +45,7 @@ public class WebSecurityConfig {
                 .loginPage("/users/signin")
                 .usernameParameter("email")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/users/hello", true)
+                .defaultSuccessUrl("/users/showProfile", true)
                 .permitAll()
 
                 // Configuration du logout

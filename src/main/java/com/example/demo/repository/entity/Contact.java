@@ -1,6 +1,7 @@
 package com.example.demo.repository.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Contact {
@@ -21,6 +22,20 @@ public class Contact {
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private User user;
 
+    @ManyToMany
+    @JoinTable(name="familyStatus",
+            joinColumns=@JoinColumn(name="contactId"),
+            inverseJoinColumns=@JoinColumn(name="procheId")
+    )
+    private List<Contact> contactList;
+
+    @ManyToMany
+    @JoinTable(name="familyStatus",
+            joinColumns=@JoinColumn(name="procheId"),
+            inverseJoinColumns=@JoinColumn(name="contactId")
+    )
+
+    private List<User> friendOf;
     public Contact() {
     }
 
