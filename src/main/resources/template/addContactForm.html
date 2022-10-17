@@ -14,25 +14,21 @@
   <div th:insert="../fragments/header :: header">
   </div>
   <main class="d-flex flex-column align-items-center">
-    <h1>Inscription</h1>
+    <h1>ajouter contact</h1>
     <form class=" col-3 d-flex flex-column align-items-center border border-secondary rounded"
-          action="#" th:action="@{/users/register}" th:object="${user}" method="post"
+          action="#" th:action="@{/contact/addContact}" th:object="${contact}" method="post"
           enctype="multipart/form-data">
-      <div>
-        <input type="text" th:field="*{firstName}"  id="firstName" name="firstName" placeholder="Entrez un Nom" />
+      <div class="mb-2 mt-2">
+        <input type="text" th:field="*{firstName}"  id="firstName" name="firstName" placeholder="Entrez un prenom" />
       </div>
-      <div>
-        <input type="text" th:field="*{familyName}"   id="familyName" name="familyName"  placeholder="Entrez un prenom" />
+      <div class="mb-2 mt-2">
+        <input type="text" th:field="*{familyName}"   id="familyName" name="familyName"  placeholder="Entrez un nom" />
       </div>
-      <div>
-        <input type="text" th:field="*{email}"  id="email" name="email"  placeholder="Entrez un email" />
+      <div class="mb-2 mt-2">
+        <input type="text" th:field="*{phoneNumber}"  id="phoneNumber" name="phoneNumber"  placeholder="votre telephone" />
       </div>
-      <div>
-        <input type="password" th:field="*{password}" id="password" name="password" placeholder="Entrez un mot de passe"/>
-      </div>
-      <div>
-        <label for="pictureFile">image</label>
-        <input type="file" th:field="*{pictureFile}" id="pictureFile" name="password" />
+      <div class="mb-2 mt-2">
+        <input type="text" th:field="*{picture}"  id="picture" name="picture"  placeholder="lien photo" />
       </div>
       <input type="submit" class="btn btn-primary" value="Create User">
     </form>
