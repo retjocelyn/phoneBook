@@ -19,10 +19,10 @@
           action="#" th:action="@{/contact/editContact}" th:object="${contact}" method="post"
           enctype="multipart/form-data">
       <div class="mb-2 mt-2">
-        <input type="text" th:field="*{firstName}"  id="firstName" th:value="${contact.firstName}"  name="firstName" placeholder="Entrez un Nom" />
+        <input type="text" th:field="*{firstName}"  id="firstName" th:value="${contact.firstName}"  name="firstName" placeholder="Entrez un prenom" />
       </div>
       <div class="mb-2 mt-2">
-        <input type="text" th:field="*{familyName}"   id="familyName" name="familyName"  th:value="${contact.familyName}" placeholder="Entrez un prenom" />
+        <input type="text" th:field="*{familyName}"   id="familyName" name="familyName"  th:value="${contact.familyName}" placeholder="Entrez un nom" />
       </div>
       <div class="mb-2 mt-2">
         <input type="text" th:field="*{phoneNumber}"  id="phoneNumber" name="phoneNumber" th:value="${contact.phoneNumber}" placeholder="votre telephone" />

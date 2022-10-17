@@ -4,6 +4,7 @@ package com.example.demo.controler;
 import com.example.demo.controler.dto.CreateContactDto;
 import com.example.demo.repository.entity.Contact;
 import com.example.demo.service.ContactService;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -73,4 +75,10 @@ public class ContactController {
         return "redirect:/contact/allContacts";
     }
 
+    @GetMapping("/searchByName")
+    public String searchOneBook(Model model, @Param("keyword") String keyword){
+       Contact contact = contactService.findByName(keyword);
+        model.addAttribute("contact" ,contact);
+        return "showOneContact";
+    }
 }

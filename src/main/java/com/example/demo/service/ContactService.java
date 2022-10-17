@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.controler.dto.CreateContactDto;
+import com.example.demo.exceptions.ContactNotFoundByFamilyName;
 import com.example.demo.exceptions.ContactNotFoundException;
 import com.example.demo.repository.ContactRepository;
 import com.example.demo.repository.UserRepository;
@@ -25,7 +26,10 @@ private UserRepository userRepository;
     }
 
     public List<Contact> findAll(){
-        return (List<Contact>) this.contactRepository.findAll();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userRepository.findUserByEmail(auth.getName());
+
+        return this.contactRepository.findContactsByUserIdOrderByFamilyNameDesc(user.getId());
     }
 
     public void addContact(CreateContactDto createContactDto) {
@@ -64,5 +68,13 @@ private UserRepository userRepository;
         contactToModify.setPicture(contactDto.getPicture());
         contactToModify.setPhoneNumber(contactDto.getPhoneNumber());
         contactRepository.save(contactToModify);
+    }
+
+    public Contact findByName(String keyword) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userRepository.findUserByEmail(auth.getName());
+        Contact foundContact = contactRepository.findContactsByUserIdAndFamilyName(user.getId(),keyword);
+
+        return foundContact;
     }
 }

@@ -14,14 +14,8 @@
   <div th:insert="../fragments/header :: header">
   </div>
   <main class="d-flex flex-column align-items-center">
-    <h1>Contacts</h1>
+    <h1>Le Contact que vous cherchez</h1>
 
-    <form class="d-flex"  method="GET" th:action="@{/contact/searchByName}">
-      <input class="form-control me-2" type="search" placeholder="Chercher par nom de famille"
-             aria-label="Search" name="keyword" value="${keyword}" id="keyword">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    <th:block th:each="contact : ${contacts}">
       <div class="card mt-5" style="width: 18rem;">
         <img class="card-img-top"  th:src="${contact.picture}"  alt="Card image cap">
         <ul class="list-group list-group-flush">
@@ -30,7 +24,7 @@
           <li th:text="${contact.phoneNumber}" class="list-group-item"></li>
         </ul>
         <div class="card-body">
-         <!-- <a th:href="@{/contact/deleteContact}" class="card-link btn btn-primary">delete</a>-->
+          <!-- <a th:href="@{/contact/deleteContact}" class="card-link btn btn-primary">delete</a>-->
           <form class=" col-3 d-flex flex-column align-items-center border border-secondary rounded"
                 action="#" th:object="${contact}" th:action="@{/contact/deleteContact}"  method="post">
             <input type="hidden" th:value="*{id}" id="id" name="id"/>
@@ -40,8 +34,6 @@
           <a href="#" class="card-link btn btn-primary">ajouter lien de famille</a>
         </div>
       </div>
-    </th:block>
-
   </main>
   <footer>
 

@@ -10,12 +10,13 @@
   <title>home</title>
 </head>
 <body>
-
-<div class="container-fluid row">
+<div class="container-fluid row d-flex flex-column align-items-center">
   <div th:insert="../fragments/header :: header">
   </div>
-  <main>
-    <form action="#" th:action="@{/users/signin}" th:object="${user}" method="post">
+  <main class="d-flex flex-column align-items-center">
+    <h1 class="d-flex justify-content-center">Se connecter</h1>
+    <form class=" col-3 d-flex flex-column align-items-center border border-secondary rounded"
+          action="#" th:action="@{/users/signin}" th:object="${user}" method="post">
       <div>
         <label for="email">Email</label>
         <input type="text" th:field="*{email}"  id="email" name="email" />

@@ -6,8 +6,7 @@
 <body>
 <div th:fragment="header">
   <header>
-
-    <nav id="headerBarre" class="navbar navbar-expand-lg bg-black col-12">
+    <nav id="headerBarre" class="col-12 navbar navbar-expand-lg bg-black col-12">
         <a class="navbar-brand text-white" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -19,9 +18,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-white"  th:href="@{/contact/addContact}">ajouter contacts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white"  th:href="@{/logout}">logout</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="http://localhost:8080/users/signin">login</a>
@@ -40,6 +36,10 @@
               </ul>
             </li>
           </ul>
+          <form class=" col-3 d-flex flex-column align-items-center border border-secondary rounded"
+                action="#" th:action="@{/logout}"  method="post">
+            <input type="submit" class="ml-2 btn btn-primary" value="logout">
+          </form>
         </div>
     </nav>
 
